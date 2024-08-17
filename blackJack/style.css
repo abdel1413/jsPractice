@@ -1,0 +1,38 @@
+body {
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+}
+h1 {
+  color: goldenrod;
+}
+
+p {
+  color: white;
+}
+#paragraph {
+  font-style: italic;
+}
+
+#container {
+  width: 500px;
+  height: 500px;
+  background: #016f32;
+}
+/* .btns {
+  display: flex;
+  flex-direction: column;
+} */
+
+button {
+  background: goldenrod;
+  color: #016f32;
+  font-size: 25px;
+  border: none;
+  width: 170px;
+  font-weight: bold;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
