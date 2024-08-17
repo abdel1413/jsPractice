@@ -24,8 +24,7 @@ body {
   flex-direction: column;
   justify-content: center;
 }
-#btn > #increment {
-}
+
 #increment,
 #save-data {
   background: crimson;
