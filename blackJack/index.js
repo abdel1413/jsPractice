@@ -1,18 +1,29 @@
-let firstCard = 10;
-let secondCard = 4;
+// let firstCard = getRandomCard();
+// let secondCard = getRandomCard();
 let cardArray = [];
-cardArray.push(firstCard);
-cardArray.push(secondCard);
-let sum = firstCard + secondCard;
+// cardArray.push(firstCard);
+// cardArray.push(secondCard);
+//let sum = firstCard + secondCard;
+let sum = 0;
 let hasBlackJack = false;
-let isAlive = true;
+let isAlive = false;
 let message = "";
 let messageEl = document.getElementById("paragraph");
 let result = document.querySelector("#result");
 let cardEl = document.querySelector("#cards");
 
 function startGame() {
-  renderGame();
+  isAlive = !isAlive;
+  if (!hasBlackJack) {
+    let firstCard = getRandomCard();
+    let secondCard = getRandomCard();
+    cardArray.push(firstCard);
+    cardArray.push(secondCard);
+    sum = firstCard + secondCard;
+    renderGame();
+  } else {
+    return;
+  }
 }
 
 function renderGame() {
@@ -29,20 +40,51 @@ function renderGame() {
   messageEl.textContent = message;
   messageEl.style.color = "#016f32";
   messageEl.style.background = "white";
-  //   for (let i = 0; i < cardArray.length; i++) {
-  //     cardEl.textContent = `Cards: ${cardArray[i]}`;
-  //   }
 
-  cardEl.textContent = `Cards: ${cardArray[0]} ${cardArray[1]}`;
+  //   cardEl.textContent = `Cards:`;
+  //     for (let i = 0; i < cardArray.length; i++) {
+  //     cardEl.textContent += cardArray[i] + " ";
+  //   }
+  displayCards(cardArray);
   result.textContent = "Sum:" + sum;
 }
 
 function newCard() {
-  let thirdCard = 9;
-  cardArray.push(thirdCard);
-  sum += thirdCard;
+  //   cardEl.textContent = `Cards: ${cardArray[0]} ${cardArray[1]} ${cardArray[2]}`;
+  //   cardEl.textContent = "Cards:";
+  //   for (let i = 0; i < cardArray.length; i++) {
+  //     cardEl.textContent += cardArray[i] + " ";
+  //   }
 
-  cardEl.textContent = `Cards: ${cardArray[0]} ${cardArray[1]} ${cardArray[2]}`;
-  result.textContent = "Sum: " + sum;
-  renderGame();
+  if (isAlive && !hasBlackJack) {
+    let thirdCard = getRandomCard();
+    cardArray.push(thirdCard);
+    sum += thirdCard;
+    displayCards(cardArray);
+    result.textContent = "Sum: " + sum;
+    renderGame();
+  }
+}
+
+function displayCards(array) {
+  cardEl.textContent = "Cards: ";
+  for (let i = 0; i < array.length; i++) {
+    //cardEl.textContent = cardEl.textContent + array[i] + " ";
+    cardEl.textContent += array[i] + " ";
+  }
+}
+
+//get random num
+// let randomNumber = Math.floor(Math.random() * 6) + 1;
+// console.log(randomNumber);
+
+function getRandomCard() {
+  let randomNumber = Math.floor(Math.random() * 13) + 1;
+  if (randomNumber > 10) {
+    return 10;
+  } else if (randomNumber === 1) {
+    return 11;
+  } else {
+    return randomNumber;
+  }
 }
