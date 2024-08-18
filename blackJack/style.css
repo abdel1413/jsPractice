@@ -36,3 +36,11 @@ button {
   margin-bottom: 10px;
   border-radius: 5px;
 }
+
+#orange-shelf {
+  background-color: red;
+}
+
+#apple-shelf {
+  background-color: sandybrown;
+}

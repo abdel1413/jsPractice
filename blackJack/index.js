@@ -93,3 +93,25 @@ function getRandomCard() {
 let player = { name: "Smith", chips: 145 };
 
 playerEl.textContent = player.name + ": $" + player.chips;
+
+let hands = ["rock", "papper", "cissor"];
+
+const getHand = () => {
+  let randon = Math.floor(Math.random() * 3);
+
+  return hands[randon];
+};
+
+console.log(getHand());
+
+let oranges = document.querySelector("#orange-shelf");
+let apples = document.querySelector("#apple-shelf");
+let fruits = ["🍎 ", "🍊 ", "🍎 ", "🍊 ", "🍎 "];
+
+for (let i = 0; i < fruits.length; i++) {
+  if (fruits[i] == "🍎 ") {
+    apples.textContent += fruits[i] + " , ";
+  } else {
+    oranges.textContent += fruits[i] + " , ";
+  }
+}
