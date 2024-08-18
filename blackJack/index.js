@@ -11,6 +11,7 @@ let message = "";
 let messageEl = document.getElementById("paragraph");
 let result = document.querySelector("#result");
 let cardEl = document.querySelector("#cards");
+let playerEl = document.querySelector("#player-el");
 
 function startGame() {
   isAlive = !isAlive;
@@ -88,3 +89,7 @@ function getRandomCard() {
     return randomNumber;
   }
 }
+
+let player = { name: "Smith", chips: 145 };
+
+playerEl.textContent = player.name + ": $" + player.chips;
