@@ -1,0 +1,22 @@
+body {
+  text-align: center;
+  background: rgb(214, 96, 96);
+}
+#log-btn {
+  width: 200px;
+  height: 70px;
+  background-color: tomato;
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+
+  border: none;
+  border-radius: 10px;
+  margin-top: 100px;
+}
+
+.img-el {
+  border: 2px solid red;
+  margin: 2rem;
+  border-radius: 50%;
+}
